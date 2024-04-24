@@ -118,3 +118,5 @@ Hyy my name is shrey and this is my blog post
    ![_config.yml]({{ site.baseurl }}/images/part11.png)
    ![_config.yml]({{ site.baseurl }}/images/part12.png)
    
+
+Congratulations! You have successfully deployed a Three-Tier Application using Docker. Feel free to explore further and customize your project. Happy coding!
