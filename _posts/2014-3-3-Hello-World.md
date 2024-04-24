@@ -89,7 +89,29 @@ hyy my name is shrey
 
    ![_config.yml]({{ site.baseurl }}/images/part7.png)
 
+7. **Building and Running the Docker Image**
 
+   Open the Command Prompt (CMD) terminal inside the `app` folder of the project. Then, run the following command:
+
+   ```bash
+   docker build -t 21bcp377-project .
+   ```
+   ![_config.yml]({{ site.baseurl }}/images/part8.png)
+
+   The execution of the above command will generate a Docker Image with name 21bcp377-project and it will take some time for it. After the Image is created we need to Run it as a Docker Container.
+
+8. **Running the Docker Image as a Container**
+
+   To run the Docker Image as a Docker Container, execute the following command:
+
+   ```bash
+   docker run -d -p 3000:3000 --network=mongo-network --name=21bcp377-project 21bcp377-project
+   ```
+
+   ![_config.yml]({{ site.baseurl }}/images/part9.png)
+
+
+   
 
 
 
