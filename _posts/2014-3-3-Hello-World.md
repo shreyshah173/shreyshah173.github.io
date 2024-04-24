@@ -55,6 +55,41 @@ hyy my name is shrey
    
    Here, the container with the name `21BCP335-express` is configured to connect the MongoDB Database with the Frontend of the project in Docker. The container will run on port `8081`. Environment variables such as Username and Password of the MongoDB are passed to access the Database, along with the container name of the MongoDB in the Server Environment variable. The container will be running on the same network as the previous container.
 
+4. **Accessing the Frontend and Creating Databases**
+
+   Next, open the following link in your browser: `localhost:8081`, and proceed to create two databases named `my-db` and `user-accounts`.
+
+   ![_config.yml]({{ site.baseurl }}/images/part5.png)
+
+   It's essential to create these two databases as they will be required by the Frontend during runtime. Additionally, make sure to update the MongoDB URL specified in the `server.js` file, as MongoDB will be running using Docker instead of on the Local Machine.
+
+5. **Updating MongoDB URLs in the `server.js` File**
+
+   Navigate to the `server.js` file within the project directory. Replace the values of `mongoUrlLocal` and `mongoUrlDocker` with the following MongoDB URL:
+
+   ![_config.yml]({{ site.baseurl }}/images/part6.png)
+
+   This step ensures that the server connects to the MongoDB database correctly. It replaces the previous URLs with the Docker-specific URL, allowing seamless integration with the MongoDB container running in Docker.
+
+
+6. **Updating the Dockerfile**
+
+   Next, delete the existing Dockerfile provided in the project. Then, create a new Dockerfile inside the `app` folder of the project using the following commands:
+
+   ```Dockerfile
+   FROM node
+   WORKDIR /app
+   COPY . .
+   ENV MONGO_DB_USERNAME=admin
+   ENV MONGO_DB_PWD=password
+   RUN npm install
+   EXPOSE 3000
+   CMD ["node", "server.js"]
+   ```
+
+   ![_config.yml]({{ site.baseurl }}/images/part7.png)
+
+
 
 
 
