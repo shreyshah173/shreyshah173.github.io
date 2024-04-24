@@ -4,7 +4,7 @@ title: Docker 3 Tier Architecture Tutorial!
 
 ---
 
-Hyy my name is shrey and this is my blog post 
+Hyy my name is shrey and this is my blog post on docker 3 tier architecture
 
 
 
