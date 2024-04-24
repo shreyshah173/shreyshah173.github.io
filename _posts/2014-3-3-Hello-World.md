@@ -6,7 +6,8 @@ To deploy a Three-Tier Application using Docker, the initial step involves setti
 
 To commence, clone the Project Repository using the following command:
 
-git clone https://gitlab.com/nanuchi/developing-with-docker
+`git clone https://gitlab.com/nanuchi/developing-with-docker`
+
 
 
 working under here
