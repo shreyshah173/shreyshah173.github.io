@@ -16,6 +16,9 @@ hyy my name is shrey
 
    `git clone https://gitlab.com/nanuchi/developing-with-docker`
 
+   ![_config.yml]({{ site.baseurl }}/images/clone.png)
+
+
 
 1. **Creating a Network for Docker Containers**
 
@@ -27,6 +30,38 @@ hyy my name is shrey
    docker network create mongo-network
    ```
    ![_config.yml]({{ site.baseurl }}/images/config.png)
+
+
+2. **Pulling and Running MongoDB Image**
+
+   To pull the MongoDB image from DockerHub and run it as a container, execute the following command:
+   ``` bash 
+   docker run -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --network=mongo-network --name=21BCP335-mongodb -d mongo
+   ```
+
+   ![_config.yml]({{ site.baseurl }}/images/part3.png)
+
+   Here, the `mongo` image will be automatically pulled from DockerHub to run the container in detachable mode with the name `21BCP335-mongodb` in the network `mongo-network`. The container will be running on the default port `27017`. You can check all the running containers using the command `docker ps`. Environment variables such as Username and Password are also passed to run the container. Similarly, we will be creating another container for Express by pulling its image from DockerHub.
+
+3. **Running Express Container**
+
+   The Express Container can be run using the following command:
+   ``` bash 
+   docker run -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password -e ME_CONFIG_MONGODB_SERVER=21BCP335-mongodb --network=mongo-network --name=21BCP335-express -d mongo-express
+   ```
+
+   ![_config.yml]({{ site.baseurl }}/images/part4.png)
+
+   
+   Here, the container with the name `21BCP335-express` is configured to connect the MongoDB Database with the Frontend of the project in Docker. The container will run on port `8081`. Environment variables such as Username and Password of the MongoDB are passed to access the Database, along with the container name of the MongoDB in the Server Environment variable. The container will be running on the same network as the previous container.
+
+
+
+
+
+
+
+
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 
