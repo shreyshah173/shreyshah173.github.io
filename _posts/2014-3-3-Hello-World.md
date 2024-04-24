@@ -17,6 +17,18 @@ hyy my name is shrey
    `git clone https://gitlab.com/nanuchi/developing-with-docker`
 
 
+1. **Creating a Network for Docker Containers**
+
+   To run a Three Tier Application, we need to run three Docker Containers simultaneously. So, it is necessary to run all these containers inside a network to avoid their interaction with other containers.
+
+   So, Network can be created by using the following command after starting the Docker Engine with name mongo-network:
+
+   ```bash
+   docker network create mongo-network
+   ```
+   ![_config.yml]({{ site.baseurl }}/images/config.png)
+
+![_config.yml]({{ site.baseurl }}/images/config.png)
 
 
 
