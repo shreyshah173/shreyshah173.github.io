@@ -118,4 +118,3 @@ Hyy my name is shrey and this is my blog post
    ![_config.yml]({{ site.baseurl }}/images/part11.png)
    ![_config.yml]({{ site.baseurl }}/images/part12.png)
    
-   
